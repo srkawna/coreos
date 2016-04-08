@@ -1,0 +1,19 @@
+#cloud-config
+#hostname
+hostname: root
+
+ssh_authorized_keys:
+---- BEGIN SSH2 PUBLIC KEY ----
+Comment: "rsa-key-20160222"
+AAAAB3NzaC1yc2EAAAABJQAAAQEAuGDjYQwVz3iWHhN9XDwpTcNlIpux1K5Vv5jU
+o0M0e7zmkKt2vPJmAeMs/Drc3ciV56/y/2bwUHm5qBE30XQ69GwaeG60h/oHeOJh
+JaQW1wOT8miOPCG0epwWl8kWBDZl4f6+NxmUopzB+iqeKG+kkX/irH6dIhS5pxzq
+xZkfWVdS4KjKsoE3KFq4D60cG64+ssgPVjx9fXsT/3Wqn+9cL7UruJyfka+KkLl/
+LvAxI7YuA4TVDwDXD8Q2f3zEUKKCmqPUTrdYoE6EyLDXcqLnfl+K9maOgnWUM7Or
+dTS2vYzivcl1cIk1B4IFT3qAhG3oZ6MSo+S3aMH2/3OkD3tkvw==
+---- END SSH2 PUBLIC KEY ----
+
+coreos:
+  etcd:
+    # generate a new token for each unique cluster from https://discovery.etcd.io/new
+      discovery: https://discovery.etcd.io/4b6830f892486c0fe85675e173cdc4e1
