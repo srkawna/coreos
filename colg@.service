@@ -1,0 +1,13 @@
+[Unit]
+Description=nginx
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill nginx1
+ExecStartPre=-/usr/bin/docker rm nginx1
+ExecStartPre=/usr/bin/docker pull nginx
+ExecStart=/usr/bin/docker run --rm --name nginx1 -p 80:80 Website1 /usr/share/nginx/html nginx
+[X-Fleet]
+Conflicts=colg@*.service
