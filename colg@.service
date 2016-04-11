@@ -7,7 +7,7 @@ Requires=docker.service
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill nginx1
 ExecStartPre=-/usr/bin/docker rm nginx1
-ExecStartPre=/usr/bin/docker pull nginx
-ExecStart=/usr/bin/docker run --rm --name nginx1 -p 80:80 Website1 /usr/share/nginx/html nginx
+ExecStartPre=/usr/bin/docker pull nginx:latest
+ExecStart=/usr/bin/docker run --rm --name nginx1 -p 8888:80 -v Website1 /usr/share/nginx/html nginx:latest
 [X-Fleet]
 Conflicts=colg@*.service
