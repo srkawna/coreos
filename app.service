@@ -8,5 +8,5 @@ TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill nginx1
 ExecStartPre=-/usr/bin/docker rm nginx1
 ExecStartPre=/usr/bin/docker pull nginx
-ExecStart=/usr/bin/docker run --name nginx1 nginx 
+ExecStart=/usr/bin/docker run --name nginx1 -v Website/ /usr/share/nginx/html/ nginx 
 ExecStop=/usr/bin/docker stop nginx1
